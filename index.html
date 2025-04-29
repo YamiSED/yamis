@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sauvons Yami - Cagnotte solidaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --primary-dark: #27ae60;
+            --secondary-color: #f1c40f;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #34495e;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(46, 204, 113, 0.2) 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .cat-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .donation-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .donation-card {
+            flex: 1 1 300px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .progress-container {
+            margin: 30px 0;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .amount-raised {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+
+        .donate-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .donate-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .story {
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin: 50px 0;
+        }
+
+        .story h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .story p {
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .twitter {
+            background-color: #1da1f2;
+        }
+
+        .whatsapp {
+            background-color: #25d366;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .donation-container {
+                flex-direction: column;
+            }
+            
+            .story {
+                padding: 30px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-paw"></i>
+                    Sauvons Yami
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Photo de Yami" class="cat-image animated">
+            <h1 class="animated delay-1">Sauvons Yami ensemble</h1>
+            <p class="animated delay-2">Notre petit chat a fait une chute du 6ème étage et a besoin de soins urgents. Aidez-nous à financer son traitement.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="donation-container">
+            <div class="donation-card animated delay-1">
+                <h2>Soutenir Yami</h2>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-bar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>Objectif: 7688€</span>
+                        <span id="percentage">0%</span>
+                    </div>
+                    <div class="amount-raised" id="amount-raised">0€</div>
+                </div>
+                <p>Chaque don compte, même le plus petit. Merci pour votre générosité.</p>
+                <button class="donate-btn" id="donate-btn">Faire un don</button>
+            </div>
+
+            <div class="donation-card animated delay-2">
+                <h2>Dernières nouvelles</h2>
+                <p><i class="fas fa-heart" style="color: var(--primary-color);"></i> <strong>Yami se bat courageusement</strong></p>
+                <p>Malgré ses multiples fractures, Yami montre une grande volonté de vivre. Les vétérinaires sont optimistes.</p>
+                <p><i class="fas fa-calendar-alt" style="color: var(--primary-color);"></i> <strong>Prochaine étape:</strong></p>
+                <p>Opération de la mâchoire prévue dans 3 jours si nous réunissons les fonds nécessaires.</p>
+            </div>
+        </div>
+
+        <div class="story animated delay-3">
+            <h2>L'histoire de Yami</h2>
+            <p>Notre petit Yami est tombé accidentellement du 6e étage. Malgré la violence de la chute, aucun organe vital n'a été touché, ce qui nous donne un vrai espoir. Il souffre cependant de plusieurs fractures : à la mâchoire, au coude et aux côtes.</p>
+            
+            <p>Le vétérinaire nous a clairement exposé la situation : nous avions deux choix. Le laisser partir… ou tenter de le sauver. On n'a pas pu se résoudre à le laisser mourir. Il est jeune, il a envie de vivre, et il fêtera ses 1 an le 20 avril.</p>
+            
+            <p>Alors, on se bat, même si c'est dur. Les soins coûtent, au minimum, 7688€ ! Nous avons déjà mis 1500€ de notre poche, en faisant tout ce qu'on peut… mais on n'y arrivera pas seuls.</p>
+            
+            <p>C'est une question de vie ou de mort pour Yami. C'est pourquoi nous lançons cette cagnotte. Si vous pouvez faire un don, même petit, chaque euro est une chance en plus pour lui.</p>
+        </div>
+
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami avant l'accident" class="animated">
+            <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami à la clinique" class="animated delay-1">
+            <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami se rétablit" class="animated delay-2">
+        </div>
+
+        <div class="share-buttons">
+            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-paw"></i> Sauvons Yami
+                </div>
+                <p>Merci pour votre soutien et votre générosité</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulation de la progression de la cagnotte
+        const targetAmount = 7688;
+        const raisedAmount = 1500; // Montant déjà collecté
+        
+        // Mise à jour de la barre de progression
+        const progressBar = document.getElementById('progress-bar');
+        const percentageElement = document.getElementById('percentage');
+        const amountRaisedElement = document.getElementById('amount-raised');
+        
+        // Calcul du pourcentage
+        const percentage = Math.min(Math.round((raisedAmount / targetAmount) * 100), 100);
+        
+        // Animation de la barre de progression
+        setTimeout(() => {
+            progressBar.style.width = percentage + '%';
+            percentageElement.textContent = percentage + '%';
+            amountRaisedElement.textContent = raisedAmount + '€';
+        }, 500);
+        
+        // Bouton de don
+        document.getElementById('donate-btn').addEventListener('click', () => {
+            alert('Merci pour votre don ! Pour des raisons de sécurité, nous vous redirigerons vers une plateforme sécurisée de paiement. En développement, cette fonctionnalité serait connectée à PayPal ou Stripe.');
+            // En production, rediriger vers une page de paiement sécurisée
+            // window.location.href = 'https://paypal.com/...';
+        });
+        
+        // Boutons de partage
+        const shareButtons = document.querySelectorAll('.share-btn');
+        shareButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                let url;
+                if (button.classList.contains('facebook')) {
+                    url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+                } else if (button.classList.contains('twitter')) {
+                    url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=Sauvons%20Yami%20-%20Aidez-nous%20à%20financer%20les%20soins%20de%20notre%20chat`;
+                } else if (button.classList.contains('whatsapp')) {
+                    url = `https://wa.me/?text=Sauvons%20Yami%20-%20Aidez-nous%20à%20financer%20les%20soins%20de%20notre%20chat%20${encodeURIComponent(window.location.href)}`;
+                }
+                window.open(url, '_blank', 'width=600,height=400');
+            });
+        });
+    </script>
+</body>
+</html>
