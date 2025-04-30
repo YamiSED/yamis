@@ -84,9 +84,25 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(46, 204, 113, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(46, 204, 113, 0.2) 100%), url('philippe6.JPG') center/cover no-repeat;
             padding: 80px 0;
             text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+        .hero h1, .hero p, .hero .cat-image {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -209,53 +225,46 @@
         }
 
         /* Galerie moderne */
-.gallery-section {
-    margin: 50px 0;
-}
+        .gallery-section {
+            margin: 50px 0;
+        }
 
-.gallery-title {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
+        .gallery-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
 
-.gallery-item {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
 
-.gallery-item img, .gallery-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-.gallery-item.video {
-    aspect-ratio: 16/9;
-    grid-column: span 2;
-}
-
-.gallery-item.photo {
-    aspect-ratio: 1/1;
-}
-
-/* Version mobile */
+        .gallery-item.photo {
+            aspect-ratio: 1/1;
+        }
 
         /* Version mobile */
         @media (max-width: 768px) {
@@ -265,6 +274,23 @@
             
             .gallery-item.photo {
                 aspect-ratio: 4/3;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .donation-container {
+                flex-direction: column;
+            }
+            
+            .story {
+                padding: 30px;
+            }
+            
+            .header-donate {
+                padding: 8px 15px;
+                font-size: 0.9rem;
             }
         }
 
@@ -324,25 +350,6 @@
             margin-bottom: 20px;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .donation-container {
-                flex-direction: column;
-            }
-            
-            .story {
-                padding: 30px;
-            }
-            
-            .header-donate {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-        }
-
         /* Animation */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -373,7 +380,7 @@
 
     <section class="hero">
         <div class="container">
-            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Photo de Yami" class="cat-image animated">
+            <img src="philippe2.JPG" alt="Photo de Yami" class="cat-image animated">
             <h1 class="animated delay-1">Yami a besoin de nous</h1>
             <p class="animated delay-2">Notre petit chat a fait une chute du 6ème étage et a besoin de soins urgents. Aidez-nous à financer son traitement.</p>
         </div>
@@ -396,29 +403,16 @@
             <div class="gallery-grid">
                 <!-- Photos par deux sur PC, vertical sur mobile -->
                 <div class="gallery-item photo animated">
-                    <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami avant l'accident">
+                    <img src="philippe1.JPG" alt="Yami avant l'accident">
                 </div>
                 <div class="gallery-item photo animated delay-1">
-                    <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami à la clinique">
+                    <img src="philippe3.jpg" alt="Yami à la clinique">
                 </div>
                 <div class="gallery-item photo animated delay-2">
-                    <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami se rétablit">
+                    <img src="philippe4.JPG" alt="Yami se rétablit">
                 </div>
                 <div class="gallery-item photo animated delay-3">
-                    <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami en traitement">
-                </div>
-                <!-- Vidéos -->
-                <div class="gallery-item video animated">
-                    <video controls>
-                        <source src="video1.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la vidéo.
-                    </video>
-                </div>
-                <div class="gallery-item video animated delay-1">
-                    <video controls>
-                        <source src="video2.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la vidéo.
-                    </video>
+                    <img src="philippe5.JPG" alt="Yami en traitement">
                 </div>
             </div>
         </div>
