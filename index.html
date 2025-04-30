@@ -84,7 +84,7 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(46, 204, 113, 0.2) 100%), url('philippe6.JPG') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(46, 204, 113, 0.2) 100%), url('philippe7.jpeg') center/cover no-repeat;
             padding: 80px 0;
             text-align: center;
             position: relative;
@@ -363,6 +363,68 @@
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
+
+        /* Styles pour le bouton et la modale */
+        .ordonnance-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin: 15px 0;
+        }
+
+        .ordonnance-btn:hover {
+            background-color: #e6b801;
+            transform: translateY(-2px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+
+        .modal-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .modal-content img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--white);
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: var(--secondary-color);
+        }
     </style>
 </head>
 <body>
@@ -383,8 +445,17 @@
             <img src="philippe2.JPG" alt="Photo de Yami" class="cat-image animated">
             <h1 class="animated delay-1">Yami a besoin de nous</h1>
             <p class="animated delay-2">Notre petit chat a fait une chute du 6ème étage et a besoin de soins urgents. Aidez-nous à financer son traitement.</p>
+            <button class="ordonnance-btn animated delay-2" id="ordonnanceBtn">Voir l'ordonnance</button>
         </div>
     </section>
+
+    <!-- Modal pour afficher l'ordonnance -->
+    <div id="ordonnanceModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img src="philippe8.png" alt="Ordonnance vétérinaire">
+        </div>
+    </div>
 
     <div class="container">
         <div class="story animated delay-3">
@@ -507,6 +578,25 @@
                 window.open(url, '_blank', 'width=600,height=400');
             });
         });
+
+        // Gestion de la modale pour l'ordonnance
+        const modal = document.getElementById('ordonnanceModal');
+        const btn = document.getElementById('ordonnanceBtn');
+        const span = document.getElementsByClassName('close')[0];
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        }
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
