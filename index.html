@@ -65,6 +65,24 @@
             margin-right: 10px;
         }
 
+        .header-donate {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .header-donate:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
         .hero {
             background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(46, 204, 113, 0.2) 100%);
             padding: 80px 0;
@@ -190,22 +208,61 @@
             margin-bottom: 20px;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+        /* Galerie moderne */
+        .gallery-section {
             margin: 50px 0;
         }
 
-        .gallery img {
-            width: 100%;
-            border-radius: 10px;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
+        .gallery-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
         }
 
-        .gallery img:hover {
-            transform: scale(1.03);
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item.video {
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item.photo {
+            aspect-ratio: 1/1;
+        }
+
+        /* Version mobile */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item.photo {
+                aspect-ratio: 4/3;
+            }
         }
 
         .share-buttons {
@@ -276,6 +333,11 @@
             .story {
                 padding: 30px;
             }
+            
+            .header-donate {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
         }
 
         /* Animation */
@@ -301,6 +363,7 @@
                     <i class="fas fa-paw"></i>
                     Sauvons Yami
                 </a>
+                <button class="header-donate">Faire un don</button>
             </nav>
         </div>
     </header>
@@ -308,12 +371,55 @@
     <section class="hero">
         <div class="container">
             <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Photo de Yami" class="cat-image animated">
-            <h1 class="animated delay-1">Sauvons Yami ensemble</h1>
+            <h1 class="animated delay-1">Yami a besoin de nous</h1>
             <p class="animated delay-2">Notre petit chat a fait une chute du 6ème étage et a besoin de soins urgents. Aidez-nous à financer son traitement.</p>
         </div>
     </section>
 
     <div class="container">
+        <div class="story animated delay-3">
+            <h2>Que ce qui s'est passé ?</h2>
+            <p>Yami est tombé accidentellement du 6e étage. Malgré la violence de la chute, aucun organe vital n'a été touché, ce qui nous donne un vrai espoir. Il souffre cependant de plusieurs fractures : à la mâchoire, au coude et aux côtes.</p>
+            
+            <p>Le vétérinaire nous a clairement exposé la situation : nous avions deux choix. Le laisser partir… ou tenter de le sauver. On n'a pas pu se résoudre à le laisser mourir. Il est jeune, il a envie de vivre, et il fêtera ses 1 an le 20 avril.</p>
+            
+            <p>Alors, on se bat, même si c'est dur. Les soins coûtent, au minimum, 2300€ ! Nous avons déjà mis 55€ de notre poche, en faisant tout ce qu'on peut… mais on n'y arrivera pas seuls.</p>
+            
+            <p>C'est une question de vie ou de mort pour Yami. C'est pourquoi nous lançons cette cagnotte. Si vous pouvez faire un don, même petit, chaque euro est une chance en plus pour lui.</p>
+        </div>
+
+        <div class="gallery-section">
+            <h2 class="gallery-title">Galerie de Yami</h2>
+            <div class="gallery-grid">
+                <!-- Photos par deux sur PC, vertical sur mobile -->
+                <div class="gallery-item photo animated">
+                    <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami avant l'accident">
+                </div>
+                <div class="gallery-item photo animated delay-1">
+                    <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami à la clinique">
+                </div>
+                <div class="gallery-item photo animated delay-2">
+                    <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami se rétablit">
+                </div>
+                <div class="gallery-item photo animated delay-3">
+                    <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami en traitement">
+                </div>
+                <!-- Vidéos -->
+                <div class="gallery-item video animated">
+                    <video controls>
+                        <source src="video1.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </div>
+                <div class="gallery-item video animated delay-1">
+                    <video controls>
+                        <source src="video2.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </div>
+            </div>
+        </div>
+
         <div class="donation-container">
             <div class="donation-card animated delay-1">
                 <h2>Soutenir Yami</h2>
@@ -332,29 +438,12 @@
             </div>
 
             <div class="donation-card animated delay-2">
-                <h2>Mis à jour et evolution de la situation de Yami</h2>
+                <h2>Dernières nouvelles et évolution de Yami</h2>
                 <p><i class="fas fa-heart" style="color: var(--primary-color);"></i> <strong>Yami toujours courageux</strong></p>
                 <p>Malgré ses multiples fractures, Yami montre une grande volonté de vivre. Le vétérinaire est optimiste.</p>
                 <p><i class="fas fa-calendar-alt" style="color: var(--primary-color);"></i> <strong>Prochaine étape:</strong></p>
                 <p>Opération de la mâchoire prévue dans 11 jours si nous réunissons les fonds nécessaires.</p>
             </div>
-        </div>
-
-        <div class="story animated delay-3">
-            <h2>Ques ce qui s'est passé ?</h2>
-            <p>Yami est tombé accidentellement du 6e étage. Malgré la violence de la chute, aucun organe vital n'a été touché, ce qui nous donne un vrai espoir. Il souffre cependant de plusieurs fractures : à la mâchoire, au coude et aux côtes.</p>
-            
-            <p>Le vétérinaire nous a clairement exposé la situation : nous avions deux choix. Le laisser partir… ou tenter de le sauver. On n'a pas pu se résoudre à le laisser mourir. Il est jeune, il a envie de vivre, et il fêtera ses 1 an le 20 avril.</p>
-            
-            <p>Alors, on se bat, même si c'est dur. Les soins coûtent, au minimum, 2300€ ! Nous avons déjà mis 55€ de notre poche, en faisant tout ce qu'on peut… mais on n'y arrivera pas seuls.</p>
-            
-            <p>C'est une question de vie ou de mort pour Yami. C'est pourquoi nous lançons cette cagnotte. Si vous pouvez faire un don, même petit, chaque euro est une chance en plus pour lui.</p>
-        </div>
-
-        <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami avant l'accident" class="animated">
-            <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami à la clinique" class="animated delay-1">
-            <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Yami se rétablit" class="animated delay-2">
         </div>
 
         <div class="share-buttons">
@@ -395,11 +484,14 @@
             amountRaisedElement.textContent = raisedAmount + '€';
         }, 500);
         
-        // Bouton de don
-        document.getElementById('donate-btn').addEventListener('click', () => {
-            alert('Merci pour votre don ! Pour des raisons de sécurité, nous vous redirigerons vers une plateforme sécurisée de paiement. En développement, cette fonctionnalité serait connectée à PayPal ou Stripe.');
-            // En production, rediriger vers une page de paiement sécurisée
-            // window.location.href = 'https://paypal.com/...';
+        // Boutons de don
+        const donateButtons = document.querySelectorAll('#donate-btn, .header-donate');
+        donateButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Merci pour votre don ! Pour des raisons de sécurité, nous vous redirigerons vers une plateforme sécurisée de paiement. En développement, cette fonctionnalité serait connectée à PayPal ou Stripe.');
+                // En production, rediriger vers une page de paiement sécurisée
+                // window.location.href = 'https://paypal.com/...';
+            });
         });
         
         // Boutons de partage
