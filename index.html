@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save Yami - Fundraising Campaign</title>
+    <title>Sauvons Yami - Cagnotte solidaire</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -224,7 +224,7 @@
             margin-bottom: 20px;
         }
 
-        /* Modern gallery */
+        /* Galerie moderne */
         .gallery-section {
             margin: 50px 0;
         }
@@ -266,7 +266,7 @@
             aspect-ratio: 1/1;
         }
 
-        /* Mobile version */
+        /* Version mobile */
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: 1fr;
@@ -357,8 +357,8 @@
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
 
-        /* Styles for button and modal */
-        .prescription-btn {
+        /* Styles pour le bouton et la modale */
+        .ordonnance-btn {
             display: inline-block;
             background-color: var(--primary-color);
             color: var(--white);
@@ -373,7 +373,7 @@
             margin: 15px 0;
         }
 
-        .prescription-btn:hover {
+        .ordonnance-btn:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
         }
@@ -419,7 +419,7 @@
             color: var(--secondary-color);
         }
 
-        /* Style for bold text */
+        /* Style pour le texte en gras */
         .story h2 + p {
             font-weight: bold;
         }
@@ -431,90 +431,91 @@
             <nav class="navbar">
                 <a href="#" class="logo">
                     <i class="fas fa-paw"></i>
-                    Save Yami
+                    Sauvons Yami
                 </a>
-                <button class="header-donate">Donate Now</button>
+                <button class="header-donate">Faire un don</button>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <img src="philippe2.JPG" alt="Photo of Yami" class="cat-image animated">
-            <h1 class="animated delay-1">Yami Needs Our Help</h1>
-            <p class="animated delay-2">Our little cat fell from the 6th floor and needs urgent medical care. Help us fund his treatment.</p>
-            <button class="prescription-btn animated delay-2" id="prescriptionBtn">View Veterinary Prescription</button>
+            <img src="philippe2.JPG" alt="Photo de Yami" class="cat-image animated">
+            <h1 class="animated delay-1">Yami a besoin de nous</h1>
+            <p class="animated delay-2">Notre petit chat a fait une chute du 6ème étage et a besoin de soins urgents. Aidez-nous à financer son traitement.</p>
+            <button class="ordonnance-btn animated delay-2" id="ordonnanceBtn">Voir l'ordonnance</button>
         </div>
     </section>
 
-    <!-- Modal to display the prescription -->
-    <div id="prescriptionModal" class="modal">
+    <!-- Modal pour afficher l'ordonnance -->
+    <div id="ordonnanceModal" class="modal">
         <span class="close">&times;</span>
         <div class="modal-content">
-            <img src="philippe8.png" alt="Veterinary prescription">
+            <img src="philippe8.png" alt="Ordonnance vétérinaire">
         </div>
     </div>
 
     <div class="container">
         <div class="story animated delay-3">
-            <h2>What Happened?</h2>
-            <p>Yami accidentally fell from the 6th floor. Despite the severity of the fall, no vital organs were damaged, which gives us real hope. However, he suffered several fractures: to his jaw, elbow, and ribs.</p>
+            <h2>Que ce qui s'est passé ?</h2>
+            <p>Yami est tombé accidentellement du 6e étage. Malgré la violence de la chute, aucun organe vital n'a été touché, ce qui nous donne un vrai espoir. Il souffre cependant de plusieurs fractures : à la mâchoire, au coude et aux côtes.</p>
             
-            <p>The veterinarian clearly explained the situation: we had two choices. Let him go... or try to save him. We couldn't bring ourselves to let him die. He's young, he wants to live, and he'll celebrate his 1st birthday on May 24th.</p>
+            <p>Le vétérinaire nous a clairement exposé la situation : nous avions deux choix. Le laisser partir… ou tenter de le sauver. On n'a pas pu se résoudre à le laisser mourir. Il est jeune, il a envie de vivre, et il fêtera ses 1 an le 24 Mai.</p>
             
-            <p>So we're fighting, even though it's hard. The treatment costs at least €7,688! We've already put €1,500 of our own money, doing everything we can... but we can't do it alone.</p>
+            <p>Alors, on se bat, même si c'est dur. Les soins coûtent, au minimum, 7688€ ! Nous avons déjà mis 1500€ de notre poche, en faisant tout ce qu'on peut… mais on n'y arrivera pas seuls.</p>
             
-            <p>It's a matter of life or death for Yami. That's why we're launching this fundraiser. If you can make a donation, even a small one, every euro is an extra chance for him.</p>
-            <p>To all those who think €1 doesn't count, you're wrong. Every donation, no matter how small, makes a difference. If everyone gave just €1, we'd reach our goal. Never underestimate the impact of your support!</p>
+            <p>C'est une question de vie ou de mort pour Yami. C'est pourquoi nous lançons cette cagnotte. Si vous pouvez faire un don, même petit, chaque euro est une chance en plus pour lui.</p>
+            <p>À tous ceux qui pensent qu'1€ ne compte pas, c'est faux. Chaque don, même petit, fait une différence. Si chacun donnait 1€, la cagnotte serait déjà atteinte. Ne sous-estimez jamais l'impact de votre soutien !</p>
         </div>
 
         <div class="gallery-section">
-            <h2 class="gallery-title">Yami's Gallery</h2>
+            <h2 class="gallery-title">Galerie de Yami</h2>
             <div class="gallery-grid">
+                <!-- Photos par deux sur PC, vertical sur mobile -->
                 <div class="gallery-item photo animated">
-                    <img src="philippe1.JPG" alt="Yami before the accident">
+                    <img src="philippe1.JPG" alt="Yami avant l'accident">
                 </div>
                 <div class="gallery-item photo animated delay-1">
-                    <img src="philippe3.jpg" alt="Yami at the clinic">
+                    <img src="philippe3.jpg" alt="Yami à la clinique">
                 </div>
                 <div class="gallery-item photo animated delay-2">
-                    <img src="philippe4.JPG" alt="Yami recovering">
+                    <img src="philippe4.JPG" alt="Yami se rétablit">
                 </div>
                 <div class="gallery-item photo animated delay-3">
-                    <img src="philippe5.JPG" alt="Yami in treatment">
+                    <img src="philippe5.JPG" alt="Yami en traitement">
                 </div>
             </div>
         </div>
 
         <div class="donation-container">
             <div class="donation-card animated delay-1">
-                <h2>Support Yami</h2>
+                <h2>Soutenir Yami</h2>
                 <div class="progress-container">
                     <div class="progress-bar">
                         <div class="progress" id="progress-bar"></div>
                     </div>
                     <div class="progress-text">
-                        <span>Goal: €7,688</span>
+                        <span>Objectif: 7688</span>
                         <span id="percentage">0%</span>
                     </div>
-                    <div class="amount-raised" id="amount-raised">€0</div>
+                    <div class="amount-raised" id="amount-raised">0€</div>
                 </div>
-                <p>Every donation counts, no matter how small. Thank you for your generosity.</p>
-                <button class="donate-btn" id="donate-btn">Make a Donation</button>
+                <p>Chaque don compte, même le plus petit. Merci pour votre générosité.</p>
+                <button class="donate-btn" id="donate-btn">Faire un don</button>
             </div>
 
             <div class="donation-card animated delay-2">
-                <h2>Latest Updates on Yami's Condition</h2>
-                <p><i class="fas fa-heart" style="color: var(--primary-color);"></i> <strong>Yami remains brave</strong></p>
-                <p>The veterinarians are confident, but as with any procedure, there are risks. If the operation isn't successful, amputation might unfortunately be necessary.</p>
-                <p><i class="fas fa-calendar-alt" style="color: var(--primary-color);"></i> <strong>Next step:</strong></p>
-                <p>Jaw surgery scheduled in 11 days if we raise the necessary funds.</p>
+                <h2>Dernières nouvelles et évolution de Yami</h2>
+                <p><i class="fas fa-heart" style="color: var(--primary-color);"></i> <strong>Yami toujours courageux</strong></p>
+                <p>Les vétérinaires sont confiants, mais comme pour toute intervention, il existe un risque. Si l'opération ne réussissait pas, une amputation pourrait malheureusement être nécessaire.</p>
+                <p><i class="fas fa-calendar-alt" style="color: var(--primary-color);"></i> <strong>Prochaine étape:</strong></p>
+                <p>Opération de la mâchoire prévue dans 11 jours si nous réunissons les fonds nécessaires.</p>
             </div>
         </div>
 
         <div class="share-section">
-            <p class="share-text">If you can't help Yami financially, you can help by sharing this fundraiser</p>
-            <button class="share-btn" id="shareBtn">Share This Fundraiser</button>
+            <p class="share-text">Si vous ne pouvez aider Yamin financièrement, vous pouvez le faire en partageant cette cagnotte</p>
+            <button class="share-btn" id="shareBtn">Partager cette cagnotte</button>
         </div>
     </div>
 
@@ -522,34 +523,34 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <i class="fas fa-paw"></i> Save Yami
+                    <i class="fas fa-paw"></i> Sauvons Yami
                 </div>
-                <p>Thank you for your support and generosity</p>
+                <p>Merci pour votre soutien et votre générosité</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Fundraising progress simulation
+        // Simulation de la progression de la cagnotte
         const targetAmount = 7688;
-        const raisedAmount = 1500; // Amount already raised
+        const raisedAmount = 1500; // Montant déjà collecté
         
-        // Update progress bar
+        // Mise à jour de la barre de progression
         const progressBar = document.getElementById('progress-bar');
         const percentageElement = document.getElementById('percentage');
         const amountRaisedElement = document.getElementById('amount-raised');
         
-        // Calculate percentage
+        // Calcul du pourcentage
         const percentage = Math.min(Math.round((raisedAmount / targetAmount) * 100), 100);
         
-        // Progress bar animation
+        // Animation de la barre de progression
         setTimeout(() => {
             progressBar.style.width = percentage + '%';
             percentageElement.textContent = percentage + '%';
-            amountRaisedElement.textContent = '€' + raisedAmount;
+            amountRaisedElement.textContent = raisedAmount + '€';
         }, 500);
         
-        // Donation buttons
+        // Boutons de don
         const donateButtons = document.querySelectorAll('#donate-btn, .header-donate');
         donateButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -557,16 +558,16 @@
             });
         });
         
-        // Share button
+        // Bouton de partage
         const shareBtn = document.getElementById('shareBtn');
         shareBtn.addEventListener('click', () => {
             if (navigator.share) {
                 navigator.share({
-                    title: 'Save Yami',
-                    text: 'Help us fund the treatment for our cat Yami who fell from the 6th floor',
+                    title: 'Sauvons Yami',
+                    text: 'Aidez-nous à financer les soins de notre chat Yami qui a fait une chute du 6ème étage',
                     url: window.location.href
                 }).catch(err => {
-                    console.log('Error sharing:', err);
+                    console.log('Erreur de partage:', err);
                     fallbackShare();
                 });
             } else {
@@ -576,13 +577,13 @@
 
         function fallbackShare() {
             const url = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent('Save Yami - Help us fund our cat's medical treatment');
+            const text = encodeURIComponent('Sauvons Yami - Aidez-nous à financer les soins de notre chat');
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank', 'width=600,height=400');
         }
 
-        // Modal for prescription
-        const modal = document.getElementById('prescriptionModal');
-        const btn = document.getElementById('prescriptionBtn');
+        // Gestion de la modale pour l'ordonnance
+        const modal = document.getElementById('ordonnanceModal');
+        const btn = document.getElementById('ordonnanceBtn');
         const span = document.getElementsByClassName('close')[0];
 
         btn.onclick = function() {
